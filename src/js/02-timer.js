@@ -50,7 +50,7 @@ flatpickr("#datetime-picker", {
   },
 });
 
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click",() => {
     startButton.disabled = true;
     clearInterval(countdownIntervalId);
     const selectedDate = new Date(dateTimePicker.value);
