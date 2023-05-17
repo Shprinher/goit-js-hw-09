@@ -38,7 +38,7 @@ flatpickr("#datetime-picker", {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
-    if (selectedDate < new Date()) {
+    if (selectedDate <= new Date()) {
       window.alert("Please choose a date in the future");
       startButton.disabled = true;
     } else {
@@ -52,6 +52,7 @@ flatpickr("#datetime-picker", {
 
 startButton.addEventListener("click",() => {
     startButton.disabled = true;
+    dateTimePicker.disabled = true;
     clearInterval(countdownIntervalId);
     const selectedDate = new Date(dateTimePicker.value);
     countdownIntervalId = setInterval(() => {
